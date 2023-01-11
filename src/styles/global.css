@@ -1,0 +1,73 @@
+/* base tar bort naturlig storlek på h1 osv */
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Cantora+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+body {
+    margin: 0;
+    background-color: #34113d;
+}
+h1,h2,h3,h4,h5,h6, nav > a, .categoryli, label, a {
+    font-family: 'Cantora One', sans-serif;
+}
+p {
+    font-family: 'ABeeZee', sans-serif;
+    font-style: italic;
+    /* font-size: 14px; */
+}
+nav > a, header > div > div > h3, .categoryli, label, a {
+    color: #e3ec30;
+}
+
+/* HEADER STYLES ------------------------------------------------------------------------ */
+nav > a {
+    text-decoration: none;
+    @apply p-2 m-1 border-solid border-2;
+    border-color: transparent;
+    border-bottom-color: #ffffff;
+}
+nav > a:hover {
+    border-radius: 15px;
+    background-color: #21262e;
+}
+header {
+    border-bottom: solid 1px #ffffff;
+}
+/* INDEX/HOME/STARTPAGE STYLES --------------------------------------------------------- */
+.hometextshadow {
+    border-radius: 10px;
+    background-color: #34113d1b;
+    text-shadow: #000000 -5px 5px 5px;
+}
+.hometextshadow > p {
+    background-color: #34113d8d;
+    color: #e3ec30;
+    /* font-family: 'Cantora One', sans-serif; */
+}
+
+/* CATEGORY LIST STYLES --------------------------------------------------------------- */
+ul > .categoryli:last-of-type {
+    border-radius: 0px 0px 2.7px 2.7px;
+    border-bottom: none;
+}
+.categoryli {
+    border-bottom: solid 0.5px #21262e;
+    list-style: none;
+}
+main > div > h2 {
+    margin-bottom: 8px;
+}
+@media ( max-width: 640px ) {
+    .projectlink {
+        padding-right: 2rem;
+        writing-mode: tb;
+        text-orientation: upright;
+    }
+}
