@@ -25,7 +25,7 @@ const ProjectsPage = ({ data }) => {
                     {project.projectName}
                   </h3>
                   <Link to={project.projectLink.projectLink}>
-                    <h4 class="xs:text-lg">Go to project website</h4>
+                    <h4 class="xs:text-lg">Visit site</h4>
                   </Link>
                 </section>
                 <section class="flex flex-col items-center justify-between mt-3">
@@ -56,7 +56,7 @@ const ProjectsPage = ({ data }) => {
           <section class="flex items-center justify-between xs:self-stretch">
             <h3 class="py-1 text-2xl xs:text-3xl">{project.projectName}</h3>
             <Link to={project.projectLink.projectLink}>
-              <h4 class="xs:text-lg">Go to project website</h4>
+              <h4 class="xs:text-lg">Visit site</h4>
             </Link>
           </section>
           <section class="flex flex-col items-center justify-between mt-3">
