@@ -9,13 +9,14 @@ module.exports = {
     screens: {
       // own added breakpoints
       'xs': '450px',
-      'apple': '1440px',
+      'ap': '1440px',
       // standard
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
-      '2xl': '1536px'
+      '2xl': '1536px',
+      '3xl': '1728px'
     },
     extend: {},
   },

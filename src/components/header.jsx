@@ -6,23 +6,23 @@ const Header = () => {
 
   return (
     <header class="bg-black xs:pb-3 fixed w-full">
-      <div class="p-2 xs:hidden">
+      <div class="p-2 sm:hidden">
         <div class="flex items-center justify-between">
           <Link to="/">
-            <span class="xs:hidden material-icons">home</span>
+            <span class="sm:hidden material-icons">home</span>
           </Link>
           <h3 class="text-xl">Portfolio</h3>
           {toggle ? (
             <span
               onClick={() => setToggle(!toggle)}
-              class="xs:hidden material-icons"
+              class="sm:hidden material-icons"
             >
               close
             </span>
           ) : (
             <span
               onClick={() => setToggle(!toggle)}
-              class="xs:hidden material-icons self-end"
+              class="sm:hidden material-icons self-end"
             >
               menu
             </span>
@@ -39,7 +39,7 @@ const Header = () => {
       </div>
 
       {/* DESKTOP NAVIGATION */}
-      <nav class="desktop-nav hidden xs:flex justify-evenly p-1 px-96">
+      <nav class="desktop-nav hidden sm:flex justify-evenly p-1 px-96">
         <Link to="/">Home</Link>
         <Link to="/projects">Projects</Link>
         <Link to="/about">About</Link>

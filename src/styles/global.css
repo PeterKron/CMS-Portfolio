@@ -71,10 +71,3 @@ ul > .categoryli:last-of-type {
 main > div > h2 {
     margin-bottom: 8px;
 }
-@media ( max-width: 640px ) {
-    .projectlink {
-        padding-right: 2rem;
-        writing-mode: tb;
-        text-orientation: upright;
-    }
-}

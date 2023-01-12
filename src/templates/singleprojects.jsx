@@ -30,36 +30,25 @@ const SingleProjectPage = ({ data }) => {
   return (
     <>
       <Header />
-      <main class="p-2 sm:px-56 xs:pt-20 pt-16">
+      <main class="p-3 xs:pt-20 pt-16 xs:px-10 sm:px-20 md:px-36 lg:px-44 xl:px-52 ap:px-60 2xl:px-80">
         <div class="flex items-center justify-between">
-          <h2>{project.projectName}</h2>
+          <h1 class="xs:text-5xl">{project.projectName}</h1>
           <Link to="/projects">
             <h4 class="xs:text-lg">Back to projects</h4>
           </Link>
         </div>
-        <p class="text-sm xs:text-base">
+        <p class="text-sm xs:text-base pb-2 pt-1">
           {renderRichText(project.projectDescription, options)}
         </p>
 
-        <div class="xs:hidden flex justify-start items-start">
-          <div>
+        <div class="flex flex-col items-center">
+          <div class="py-2">
             {project.screenshots.map((image) => (
-              <img src={image.resize.src} alt="" width={300} />
+              <img class="w-full" src={image.resize.src} alt="" />
             ))}
           </div>
           <Link to={project.projectLink.projectLink}>
-            <h4 class="projectlink">Go to project website</h4>
-          </Link>
-        </div>
-
-        <div class="hidden xs:flex xs:flex-col">
-          <div>
-            {project.screenshots.map((image) => (
-              <img src={image.resize.src} alt="" width={300} />
-            ))}
-          </div>
-          <Link to={project.projectLink.projectLink}>
-            <h2>Go to project website</h2>
+            <h2 class="py-3">Go to project website</h2>
           </Link>
         </div>
       </main>
@@ -80,7 +69,7 @@ export const query = graphql`
         raw
       }
       screenshots {
-        resize(width: 300, format: JPG) {
+        resize(width: 1350, format: JPG) {
           width
           height
           src
