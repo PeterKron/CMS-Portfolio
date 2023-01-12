@@ -71,3 +71,8 @@ ul > .categoryli:last-of-type {
 main > div > h2 {
     margin-bottom: 8px;
 }
+
+article:hover {
+    transform: scale(0.95);
+    box-shadow: 5px 5px 10px 10px #e2ec3085;
+}
