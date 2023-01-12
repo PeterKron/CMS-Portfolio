@@ -30,7 +30,7 @@ const SingleProjectPage = ({ data }) => {
   return (
     <>
       <Header />
-      <main class="p-2 xs:px-56 xs:pt-20 pt-16">
+      <main class="p-2 sm:px-56 xs:pt-20 pt-16">
         <div class="flex items-center justify-between">
           <h2>{project.projectName}</h2>
           <Link to="/projects">

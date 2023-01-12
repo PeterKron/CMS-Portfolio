@@ -18,6 +18,12 @@ module.exports = {
         spaceId: `${process.env.CONTENTFUL_API_SPACEID}`,
       },
     },
+    {
+      resolve: "gatsby-plugin-google-fonts",
+      options: {
+        fonts: ["material icons"],
+      },
+    },
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
