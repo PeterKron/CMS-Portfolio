@@ -29,6 +29,9 @@ p {
 nav > a, header > div > div > h3, .categoryli, label, a {
     color: #e3ec30;
 }
+.pointer-cursor{
+    cursor: pointer;
+}
 
 /* HEADER STYLES ------------------------------------------------------------------------ */
 nav > a {

@@ -97,11 +97,11 @@ const ProjectsPage = ({ data }) => {
             <div class="flex items-center p-1">
               <label>Select Categories</label>
               {toggle ? (
-                <span onClick={() => setToggle(!toggle)} class="material-icons">
+                <span onClick={() => setToggle(!toggle)} class="material-icons pointer-cursor">
                   expand_less
                 </span>
               ) : (
-                <span onClick={() => setToggle(!toggle)} class="material-icons">
+                <span onClick={() => setToggle(!toggle)} class="material-icons pointer-cursor">
                   expand_more
                 </span>
               )}
@@ -111,7 +111,7 @@ const ProjectsPage = ({ data }) => {
                 {categories.nodes.map((category) => (
                   // skapa en lista med alla unika kategorier
                   <li
-                    class="categoryli p-1 hover:bg-slate-500 bg-slate-700"
+                    class="categoryli p-1 hover:bg-slate-500 bg-slate-700 pointer-cursor"
                     onClick={() => (
                       setCurrentCategory(category.categoryName),
                       setToggle(!toggle)
@@ -121,7 +121,7 @@ const ProjectsPage = ({ data }) => {
                   </li>
                 ))}
                 <li
-                  class="categoryli p-1 hover:bg-slate-600 bg-slate-800"
+                  class="categoryli p-1 hover:bg-slate-600 bg-slate-800 pointer-cursor"
                   onClick={() => (setCurrentCategory(""), setToggle(!toggle))}
                 >
                   Show all projects
