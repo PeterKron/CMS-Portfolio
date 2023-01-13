@@ -11,7 +11,6 @@
     color: #ffffff;
 }
 body {
-    margin: 0;
     background-color: #34113d;
 }
 h1,h2,h3,h4,h5,h6, nav > a, .categoryli, label, a {
@@ -19,12 +18,10 @@ h1,h2,h3,h4,h5,h6, nav > a, .categoryli, label, a {
 }
 .material-icons {
     font-family: 'Material Icons';
-    /* font-size: 16px; */
 }
 p {
     font-family: 'ABeeZee', sans-serif;
     font-style: italic;
-    /* font-size: 14px; */
 }
 nav > a, header > div > div > h3, .categoryli, label, a {
     color: #e3ec30;
@@ -49,16 +46,29 @@ header {
 }
 /* INDEX/HOME/STARTPAGE STYLES --------------------------------------------------------- */
 .hometextshadow {
-    border-radius: 10px;
-    background-color: #34113d1b;
     text-shadow: #000000 -5px 5px 5px;
 }
 .hometextshadow > p {
-    background-color: #34113d8d;
+    background-color: #34113d5e;
     color: #e3ec30;
 }
 
 /* CATEGORY LIST STYLES --------------------------------------------------------------- */
+.w-b-white {
+    width: 148px;
+    border: 1px solid white;
+}
+ul {
+    margin-left: -1px;
+    width: 148px;
+    border: 1px solid white;
+    border-top: transparent;
+    border-radius: 0px 0px 3px 3px;
+}
+.bottom-br-none{
+    border-radius: 4px 4px 0px 0px;
+}
+
 ul > .categoryli:last-of-type {
     border-radius: 0px 0px 2.7px 2.7px;
     border-bottom: none;
@@ -67,11 +77,8 @@ ul > .categoryli:last-of-type {
     border-bottom: solid 0.5px #21262e;
     list-style: none;
 }
-main > div > h2 {
-    margin-bottom: 8px;
-}
-
-article:hover {
+/* PROJECTS.JSX STYLES ------------------------------------------------------------- */
+.projectcard:hover {
     transform: scale(0.95);
     box-shadow: 5px 5px 10px 10px #e2ec3085;
 }

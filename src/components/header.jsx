@@ -5,24 +5,24 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header class="bg-black xs:pb-3 fixed w-full">
+    <header class="bg-black sm:pb-3 fixed w-full z-20">
       <div class="p-2 sm:hidden">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between xs:p-3">
           <Link to="/">
-            <span class="sm:hidden material-icons">home</span>
+            <span class="sm:hidden material-icons xs:text-3xl">home</span>
           </Link>
           <h3 class="text-xl">Portfolio</h3>
           {toggle ? (
             <span
               onClick={() => setToggle(!toggle)}
-              class="sm:hidden material-icons"
+              class="sm:hidden material-icons xs:text-3xl"
             >
               close
             </span>
           ) : (
             <span
               onClick={() => setToggle(!toggle)}
-              class="sm:hidden material-icons self-end"
+              class="sm:hidden material-icons self-end xs:text-3xl"
             >
               menu
             </span>
