@@ -4,9 +4,12 @@ import Header from "../components/header";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types";
 
+export const Head = ({ data }) => (
+  <title>{data.contentfulProjects.projectName}</title>
+);
+
 const SingleProjectPage = ({ data }) => {
   const project = data.contentfulProjects;
-  // console.log("PROJECT", project);
 
   const options = {
     renderMark: {
@@ -48,7 +51,7 @@ const SingleProjectPage = ({ data }) => {
               <img class="w-full" src={image.resize.src} alt="" />
             ))}
           </div>
-          <a href={project.projectLink.projectLink}>
+          <a href={project.projectLink.projectLink} target="_blank" rel="noopener noreferrer">
             <h2 class="py-3">Go to project website</h2>
           </a>
         </div>

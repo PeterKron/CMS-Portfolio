@@ -2,7 +2,9 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Header from "../components/header";
 
-const ProductsPage = ({ data }) => {
+export const Head = () => <title>Contact Page</title>;
+
+const ContactPage = ({ data }) => {
   const contact = data.contentfulContactPage;
 
   return (
@@ -11,17 +13,15 @@ const ProductsPage = ({ data }) => {
       <main class="flex flex-col p-2 xs:pt-20 pt-16">
         <h1>{contact.title}</h1>
         <p>{contact.email}</p>
-        <Link to={contact.github}>GitHub</Link>
-        <Link to={contact.linkedin}>Linkedin</Link>
-        {/* <p>{contact.github}</p>
-        <p>{contact.linkedin}</p> */}
+        <a href={contact.github} target="_blank" rel="noopener noreferrer"></a>
+        <a href={contact.linkedin} target="_blank" rel="noopener noreferrer"></a>
         <img src={contact.portraitImage.resize.src} alt="" width={350} />
       </main>
     </>
   );
 };
 
-export default ProductsPage;
+export default ContactPage;
 
 export const query = graphql`
   query ContactQuery {

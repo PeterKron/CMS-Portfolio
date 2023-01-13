@@ -4,80 +4,45 @@ import Header from "../components/header";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types";
 
+export const Head = () => <title>Project Page</title>;
+
 const ProjectsPage = ({ data }) => {
   const projects = data.allContentfulProjects;
   const categories = data.allContentfulCategory;
-  console.log("PROJEKTEN", projects);
-
-  const [currentCategory, setCurrentCategory] = useState("");
   const [toggle, setToggle] = useState(false);
 
   const renderProjects = () => {
-    if (currentCategory !== "") {
-      return projects.nodes.map((project) => {
-        return project.category.map((cat) => {
-          if (cat.categoryName === currentCategory) {
-            return (
-              <article class="projectcard flex flex-col items-center justify-between border-solid border border-white bg-black rounded w-96 lg:m-4 mb-2 md:m-2 p-3">
-                <div>
-                  <section class="flex items-center justify-between xs:self-stretch">
-                    <h3 class="py-1 text-2xl xs:text-3xl">
-                      {project.projectName}
-                    </h3>
-                    <a href={project.projectLink.projectLink}>
-                      <h4 class="xs:text-lg">Visit site</h4>
-                    </a>
-                  </section>
-                  <section class="flex flex-col items-center justify-between mt-3">
-                    <Link to={`/projects/${project.slug}`}>
-                      <img
-                        class="w-full"
-                        src={project.screenshots[0].resize.src}
-                        alt=""
-                      />
-                    </Link>
-                    <p class="text-sm xs:text-base text-center mt-3">
-                      {renderRichText(project.projectDescription, options)}
-                    </p>
-                  </section>
-                </div>
-                <Link to={`/projects/${project.slug}`}>
-                  <h4 class="xs:text-xl">Read more</h4>
-                </Link>
-              </article>
-            );
-          }
-        });
-      });
-    } else {
-      return projects.nodes.map((project) => (
-        <article class="projectcard flex flex-col items-center justify-between border-solid border border-white bg-black rounded w-96 lg:m-4 mb-2 md:m-2 p-3">
-          <div>
-            <section class="flex items-center justify-between xs:self-stretch">
-              <h3 class="py-1 text-2xl xs:text-3xl">{project.projectName}</h3>
-              <a href={project.projectLink.projectLink}>
-                <h4 class="xs:text-lg">Visit site</h4>
-              </a>
-            </section>
-            <section class="flex flex-col items-center justify-between mt-3">
-              <Link to={`/projects/${project.slug}`}>
-                <img
-                  class="w-full"
-                  src={project.screenshots[0].resize.src}
-                  alt=""
-                />
-              </Link>
-              <p class="text-sm xs:text-base text-center mt-3">
-                {renderRichText(project.projectDescription, options)}
-              </p>
-            </section>
-          </div>
-          <Link to={`/projects/${project.slug}`}>
-            <h4 class="xs:text-xl">Read more</h4>
-          </Link>
-        </article>
-      ));
-    }
+    return projects.nodes.map((project) => (
+      <article class="projectcard flex flex-col items-center justify-between border-solid border border-white bg-black rounded w-96 lg:m-4 mb-2 md:m-2 p-3">
+        <div>
+          <section class="flex items-center justify-between xs:self-stretch">
+            <h3 class="py-1 text-2xl xs:text-3xl">{project.projectName}</h3>
+            <a
+              href={project.projectLink.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h4 class="xs:text-lg">Visit site</h4>
+            </a>
+          </section>
+          <section class="flex flex-col items-center justify-between mt-3">
+            <Link to={`/projects/${project.slug}`}>
+              <img
+                class="w-full"
+                src={project.screenshots[0].resize.src}
+                alt=""
+              />
+            </Link>
+            <p class="text-sm xs:text-base text-center mt-3">
+              {renderRichText(project.projectDescription, options)}
+            </p>
+          </section>
+        </div>
+        <Link to={`/projects/${project.slug}`}>
+          <h4 class="xs:text-xl">Read more</h4>
+        </Link>
+      </article>
+    ));
   };
 
   const options = {
@@ -124,25 +89,26 @@ const ProjectsPage = ({ data }) => {
               )}
             </div>
             {toggle && (
-              <ul class="absolute mt-8 z-10">
+              <ul class="proj-ul absolute mt-8 z-10">
                 {categories.nodes.map((category) => (
                   // skapa en lista med alla unika kategorier
-                  <li
-                    class="categoryli p-2 hover:bg-slate-500 bg-slate-700 pointer-cursor"
-                    onClick={() => (
-                      setCurrentCategory(category.categoryName),
-                      setToggle(!toggle)
-                    )}
-                  >
-                    {category.categoryName}
-                  </li>
+                  <Link to={`/projects/${category.slug}`}>
+                    <li
+                      class="categoryli p-2 hover:bg-slate-500 bg-slate-700 pointer-cursor"
+                      onClick={() => setToggle(!toggle)}
+                    >
+                      {category.categoryName}
+                    </li>
+                  </Link>
                 ))}
-                <li
-                  class="categoryli p-2 hover:bg-slate-600 bg-slate-800 pointer-cursor"
-                  onClick={() => (setCurrentCategory(""), setToggle(!toggle))}
-                >
-                  Show all projects
-                </li>
+                <Link to={`/projects`}>
+                  <li
+                    class="categoryli p-2 hover:bg-slate-600 bg-slate-800 pointer-cursor"
+                    onClick={() => setToggle(!toggle)}
+                  >
+                    Show all projects
+                  </li>
+                </Link>
               </ul>
             )}
           </nav>
@@ -183,6 +149,7 @@ export const query = graphql`
     allContentfulCategory(sort: { categoryName: ASC }) {
       nodes {
         categoryName
+        slug
       }
     }
   }

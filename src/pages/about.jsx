@@ -4,9 +4,10 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Header from "../components/header";
 
-const ProductsPage = ({ data }) => {
+export const Head = () => <title>About Page</title>;
+
+const AboutPage = ({ data }) => {
   const about = data.contentfulAboutPage;
-  console.log("ABOUT", about);
 
   const options = {
     renderMark: {
@@ -67,7 +68,7 @@ const ProductsPage = ({ data }) => {
   );
 };
 
-export default ProductsPage;
+export default AboutPage;
 
 export const query = graphql`
   query AboutQuery {

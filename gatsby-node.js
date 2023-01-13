@@ -26,14 +26,14 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // data.allContentfulCategory.nodes.forEach((node) => {
-  //   actions.createPage({
-  //     //URL
-  //     path: "/projects/" + node.slug,
-  //     //Template
-  //     component: path.resolve("./src/templates/categories.jsx"),
-  //     context: { slug: node.slug },
-  //   });
-  // });
+  data.allContentfulCategory.nodes.forEach((node) => {
+    actions.createPage({
+      //URL
+      path: "/projects/" + node.slug,
+      //Template
+      component: path.resolve("./src/templates/categories.jsx"),
+      context: { slug: node.slug },
+    });
+  });
 };
 
