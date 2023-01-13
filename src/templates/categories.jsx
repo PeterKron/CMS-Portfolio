@@ -72,7 +72,7 @@ const CategoryPage = ({ data }) => {
       <Header />
       <main class="p-2 ap:px-18 2xl:px-26 3xl:px-28 flex flex-col xs:pt-20 pt-16">
         <div class="flex justify-between pb-10 xs:justify-around xs:py-6 sm:pb-16">
-          <h1 class="xs:text-5xl">My Projects</h1>
+          <h1 class="xs:text-5xl">{data.contentfulCategory.categoryName}</h1>
           <nav
             class={
               toggle
@@ -131,6 +131,7 @@ export const query = graphql`
       categoryName
       projects {
         projectName
+        slug
         projectLink {
           projectLink
         }
