@@ -5,7 +5,10 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types";
 
 export const Head = ({ data }) => (
+  <>
   <title>{data.contentfulProjects.projectName}</title>
+  <meta name="description" content={`Here you can check out my project called ${data.contentfulProjects.projectName}`}></meta>
+</>
 );
 
 const SingleProjectPage = ({ data }) => {

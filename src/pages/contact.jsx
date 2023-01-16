@@ -2,7 +2,12 @@ import React from "react";
 import { graphql } from "gatsby";
 import Header from "../components/header";
 
-export const Head = () => <title>Contact Page</title>;
+export const Head = () => (
+  <>
+  <title>Contact Page</title>
+  <meta name="description" content="Here is my contact information, you are welcome to contact me through email, linkedin or github"></meta>
+</>
+);
 
 const ContactPage = ({ data }) => {
   const contact = data.contentfulContactPage;

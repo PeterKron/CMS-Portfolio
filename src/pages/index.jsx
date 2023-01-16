@@ -4,7 +4,14 @@ import Header from "../components/header";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types";
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => (
+  <>
+    <title>Home</title>
+    <meta name="description"
+    content="Welcome to this portfolio where i will tell you about me and my projects i have done, i hope you will enjoy it!"
+    ></meta>
+  </>
+);
 
 const IndexPage = ({ data }) => {
   const home = data.contentfulHomepage;
@@ -29,13 +36,18 @@ const IndexPage = ({ data }) => {
   };
 
   return (
-    <main className="h-screen bg-[top_left_-75rem] md:bg-[top_left_-40rem] xl:bg-[top_left_-20rem] 2xl:bg-[top] flex flex-col"
+    <main
+      className="h-screen bg-[top_left_-75rem] md:bg-[top_left_-40rem] xl:bg-[top_left_-20rem] 2xl:bg-[top] flex flex-col"
       style={{ backgroundImage: `url(${home.presentationImage.resize.src})` }}
-      >
+    >
       <Header />
       <article className="flex flex-col items-center m-auto text-center">
-        <h1 className="hometextshadow text-3xl xs:text-5xl sm:text-6xl xl:text-7xl mb-6 px-2">{home.title}</h1>
-        <span className="hometextshadow text-sm xs:text-base sm:text-lg xl:text-xl ap:text-2xl xs:mb-40 mb-32 px-4">{renderRichText(home.descriptionText, options)}</span>
+        <h1 className="hometextshadow text-3xl xs:text-5xl sm:text-6xl xl:text-7xl mb-6 px-2">
+          {home.title}
+        </h1>
+        <span className="hometextshadow text-sm xs:text-base sm:text-lg xl:text-xl ap:text-2xl xs:mb-40 mb-32 px-4">
+          {renderRichText(home.descriptionText, options)}
+        </span>
       </article>
     </main>
   );

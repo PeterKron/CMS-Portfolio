@@ -8,7 +8,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `portfolio-website`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://cmsportfoliomain.gatsbyjs.io/`,
   },
   plugins: [
     {

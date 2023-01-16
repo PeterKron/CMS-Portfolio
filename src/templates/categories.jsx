@@ -5,7 +5,10 @@ import CategoryNavigation from "../components/categoryNav";
 import RenderProjects from "../components/renderProjects";
 
 export const Head = ({ data }) => (
+  <>
     <title>{data.contentfulCategory.categoryName} Projects</title>
+    <meta name="description" content={`Here is a list of all my projects done under the category ${data.contentfulCategory.categoryName}`}></meta>
+  </>
   );
 
 const CategoryPage = ({ data }) => {

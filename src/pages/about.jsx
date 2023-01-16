@@ -4,7 +4,12 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Header from "../components/header";
 
-export const Head = () => <title>About Page</title>;
+export const Head = () => (
+  <>
+  <title>About Page</title>
+  <meta name="description" content="Here is information about my work experiences and educations, but also a little about me"></meta>
+  </>
+);
 
 const AboutPage = ({ data }) => {
   const about = data.contentfulAboutPage;
@@ -41,7 +46,7 @@ const AboutPage = ({ data }) => {
         <article className="lg:flex lg:px-12">
 
           <section className="p-3 bg-fuchsia-900 rounded lg:mr-4 lg:w-1/2">
-            <h1 className="text-3xl lg:text-4xl lg:pb-4">Education</h1>
+            <h2 className="text-3xl lg:text-4xl lg:pb-4">Education</h2>
             {about.education.map((education, index) => (
               <section className="my-2 p-2 xl:mb-4 border border-solid bg-black rounded" key={index}>
                 <h2><b>{education.school}</b></h2>
@@ -53,7 +58,7 @@ const AboutPage = ({ data }) => {
           </section>
 
           <section className="my-2 p-3 bg-purple-900 rounded lg:ml-4 lg:my-0 lg:w-1/2">
-            <h1 className="text-3xl lg:text-4xl lg:pb-4">Experience</h1>
+            <h2 className="text-3xl lg:text-4xl lg:pb-4">Experience</h2>
             {about.experience.map((experience, index) => (
               <section className="my-2 p-2 lg:mb-4 border border-solid bg-black rounded" key={index}>
                 <h2><b>{experience.workplace}</b></h2>
