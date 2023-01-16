@@ -13,8 +13,9 @@
 body {
     background-color: #34113d;
 }
-h1,h2,h3,h4,h5,h6, nav > a, .categoryli, label, a {
+h1,h2,h3,h4,h5,h6, nav > a, .categoryli, label, a, .p-date {
     font-family: 'Cantora One', sans-serif;
+    font-style: normal;
 }
 .material-icons {
     font-family: 'Material Icons';
@@ -23,7 +24,7 @@ p {
     font-family: 'ABeeZee', sans-serif;
     font-style: italic;
 }
-nav > a, header > div > div > h3, .categoryli, label, a {
+.categoryli, .yel-txt , a {
     color: #e3ec30;
 }
 .pointer-cursor{
@@ -85,4 +86,8 @@ ul > .categoryli:last-of-type {
 .projectcard:hover {
     transform: scale(0.95);
     box-shadow: 5px 5px 10px 10px #e2ec3085;
+}
+
+.aboutli {
+    font-family: 'ABeeZee', sans-serif;
 }

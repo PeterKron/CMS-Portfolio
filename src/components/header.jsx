@@ -5,53 +5,66 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header class="bg-black sm:pb-3 fixed w-full z-20">
-      <div class="p-2 sm:hidden">
-        <div class="flex items-center justify-between xs:p-3">
+    <header className="bg-black sm:pb-3 fixed w-full z-20">
+      <div className="p-2 sm:hidden">
+        <div className="flex items-center justify-between xs:p-3">
           <Link to="/">
-            <span class="sm:hidden material-icons xs:text-3xl">home</span>
+            <span className="sm:hidden material-icons xs:text-3xl">home</span>
           </Link>
-          <h3 class="text-xl">Portfolio</h3>
+          <h3 className="yel-txt text-xl">Portfolio</h3>
           {toggle ? (
             <span
+              className="sm:hidden material-icons xs:text-3xl"
               onClick={() => setToggle(!toggle)}
-              class="sm:hidden material-icons xs:text-3xl"
+              onKeyDown={() => setToggle(!toggle)}
             >
               close
             </span>
           ) : (
             <span
+              className="sm:hidden material-icons self-end xs:text-3xl"
               onClick={() => setToggle(!toggle)}
-              class="sm:hidden material-icons self-end xs:text-3xl"
+              onKeyDown={() => setToggle(!toggle)}
             >
               menu
             </span>
           )}
         </div>
         {toggle && (
-          <nav class="flex flex-col">
-            <Link to="/">Home</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+          <nav className="flex flex-col">
+            <Link className="yel-txt" to="/">
+              Home
+            </Link>
+            <Link className="yel-txt" to="/projects">
+              Projects
+            </Link>
+            <Link className="yel-txt" to="/about">
+              About
+            </Link>
+            <Link className="yel-txt" to="/contact">
+              Contact
+            </Link>
           </nav>
         )}
       </div>
 
       {/* DESKTOP NAVIGATION */}
-      <nav class="desktop-nav hidden sm:flex justify-evenly p-1 px-96">
-        <Link to="/">Home</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+      <nav className="desktop-nav hidden sm:flex justify-evenly p-1 px-96">
+        <Link className="yel-txt" to="/">
+          Home
+        </Link>
+        <Link className="yel-txt" to="/projects">
+          Projects
+        </Link>
+        <Link className="yel-txt" to="/about">
+          About
+        </Link>
+        <Link className="yel-txt" to="/contact">
+          Contact
+        </Link>
       </nav>
     </header>
   );
 };
 
 export default Header;
-
-{/* <span class="material-icons">home</span> homeicon */}
-{/* <span class="material-icons">location_city</span> projecticon */}
-{/* <span class="material-icons">savings</span> abouticon */}
-{/* <span class="material-icons">contacts</span> contacticon */}

@@ -13,13 +13,13 @@ const SingleProjectPage = ({ data }) => {
 
   const options = {
     renderMark: {
-      [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
+      [MARKS.BOLD]: (text) => <b classNameName="font-bold">{text}</b>,
     },
     renderNode: {
       [INLINES.HYPERLINK]: (node, children) => {
         const { uri } = node.data;
         return (
-          <a href={uri} className="underline">
+          <a href={uri} classNameName="underline">
             {children}
           </a>
         );
@@ -33,28 +33,28 @@ const SingleProjectPage = ({ data }) => {
   return (
     <>
       <Header />
-      <main class="p-3 xs:pt-20 pt-16 xs:px-10 sm:px-20 md:px-32 lg:px-44 xl:px-52 ap:px-60 2xl:px-80">
-        <div class="flex flex-col-reverse items-start md:flex-row md:items-center justify-between">
-          <h1 class="xs:text-5xl py-1">{project.projectName}</h1>
+      <main className="p-3 xs:pt-20 pt-16 xs:px-10 sm:px-20 md:px-32 lg:px-44 xl:px-52 ap:px-60 2xl:px-80">
+        <section className="flex flex-col-reverse items-start md:flex-row md:items-center justify-between">
+          <h1 className="xs:text-5xl py-1">{project.projectName}</h1>
           <Link to="/projects">
-            <h4 class="xs:text-lg pb-8 md:pb-0">Back to projects</h4>
+            <h4 className="xs:text-lg pb-8 md:pb-0">Back to projects</h4>
           </Link>
-        </div>
+        </section>
 
-        <p class="text-sm xs:text-base pb-2 pt-2">
+        <span className="text-sm xs:text-base pb-2 pt-2">
           {renderRichText(project.projectDescription, options)}
-        </p>
+        </span>
 
-        <div class="flex flex-col items-center">
-          <div class="py-2">
-            {project.screenshots.map((image) => (
-              <img class="w-full" src={image.resize.src} alt="" />
+        <section className="flex flex-col items-center">
+          <figure className="py-2">
+            {project.screenshots.map((image, index) => (
+              <img className="w-full" src={image.resize.src} alt="" key={index}/>
             ))}
-          </div>
+          </figure>
           <a href={project.projectLink.projectLink} target="_blank" rel="noopener noreferrer">
-            <h2 class="py-3">Go to project website</h2>
+            <h2 className="py-3">Go to project website</h2>
           </a>
-        </div>
+        </section>
       </main>
     </>
   );
