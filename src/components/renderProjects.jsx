@@ -27,7 +27,7 @@ const RenderProjects = ({data}) => {
           },
         },
       };
-
+    {/* HÄR MAPPAR/LOOPAR VI UT DATAN SOM VI LAGT I DEN NY VARIABELN */}
     return projects.map((project, index) => (
       <article key={index} className="projectcard flex flex-col items-center justify-between border-solid border border-white bg-black rounded w-96 lg:m-4 mb-2 md:m-2 p-3">
         <div>
