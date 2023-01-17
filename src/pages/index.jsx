@@ -63,7 +63,7 @@ export const query = graphql`
         raw
       }
       presentationImage {
-        resize(width: 2000, fit: FILL, format: PNG) {
+        resize(width: 2000, fit: FILL) {
           width
           height
           src

@@ -35,7 +35,7 @@ export const query = graphql`
     contentfulContactPage {
       title
       portraitImage {
-        resize(width: 800, format: PNG) {
+        resize(width: 800) {
           width
           height
           src

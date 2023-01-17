@@ -53,7 +53,7 @@ export const query = graphql`
           raw
         }
         screenshots {
-          resize(width: 1350, format: AUTO) {
+          resize(width: 500) {
             width
             height
             src
