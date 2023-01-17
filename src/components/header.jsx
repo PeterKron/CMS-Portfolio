@@ -12,6 +12,8 @@ const Header = () => {
             <span className="sm:hidden material-icons xs:text-3xl">home</span>
           </Link>
           <h3 className="yel-txt text-xl">Portfolio</h3>
+          {/* OM TOGGLE ÄR TRUE SÅ VISAS EN KRYSS IKON, NÄR MAN KLICKAR PÅ IKONEN SÅ 
+          SÄTTER DEN STATET "toggle" TILL TVÄRTOM VAD DEN ÄR INNAN*/}
           {toggle ? (
             <span
               className="sm:hidden material-icons xs:text-3xl"
@@ -20,6 +22,7 @@ const Header = () => {
             >
               close
             </span>
+            // ELLER OM DEN ÄR FALSE SÅ VISAS EN MENY IKON MED SAMMA LOGIK SOM PÅ KRYSS IKONEN
           ) : (
             <span
               className="sm:hidden material-icons self-end xs:text-3xl"

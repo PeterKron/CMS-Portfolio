@@ -5,8 +5,10 @@ import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types";
 
 
 const RenderProjects = ({data}) => {
+    // TAR EMOT NERPROPPAD DATA GÖR LAGRAR DATAN I EN NY VARIABEL SOM SEDAN MAPPAS UT OCH LEVERAR 
+    // DATA SOM RENDERAR CONTENT
     const projects = data
-
+    
     const options = {
         renderMark: {
           [MARKS.BOLD]: (text) => <b classNameName="font-bold">{text}</b>,
